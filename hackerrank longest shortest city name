@@ -1,8 +1,7 @@
  SELECT min(city), LENGTH(min(city))
   FROM station  
   WHERE LENGTH(city)=(SELECT MIN(LENGTH(city)) FROM STATION) 
-  ORDER BY CITY;
+  union all
    SELECT max(city), LENGTH(max(city))
   FROM station  
-  WHERE LENGTH(city)=(SELECT MAX(LENGTH(city)) FROM STATION) 
-  ORDER BY CITY;
+  WHERE LENGTH(city)=(SELECT MAX(LENGTH(city)) FROM STATION);
